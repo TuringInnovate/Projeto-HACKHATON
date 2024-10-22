@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Alunos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .aluno-card {
+            background-color: #e0f7fa;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+        }
+        .aluno-card h3 {
+            margin: 0;
+        }
+        .aluno-card p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de Alunos</h1>
+        <div id="alunos-list"></div>
+    </div>
+
+    <script>
+        // Função para buscar a lista de alunos da API
+        async function fetchAlunos() {
+            try {
+                const response = await fetch('http://localhost:3000/alunos/list') // Ajuste a URL conforme necessário
+                const alunos = await response.json()
+
+                // Seleciona o elemento onde os alunos serão exibidos
+                const alunosList = document.getElementById('alunos-list')
+
+                // Limpa o conteúdo existente
+                alunosList.innerHTML = ''
+
+                // Verifica se existem alunos retornados
+                if (alunos.length === 0) {
+                    alunosList.innerHTML = '<p>Nenhum aluno encontrado.</p>'
+                    return
+                }
+
+                // Itera sobre os alunos e cria elementos HTML para cada um
+                alunos.forEach(aluno => {
+                    const alunoCard = document.createElement('div')
+                    alunoCard.className = 'aluno-card'
+                    alunoCard.innerHTML = `
+                        <h3>Nome: ${aluno.nome}</h3>
+                        <p>Email: ${aluno.email}</p>
+                        <p>Idade: ${aluno.idade}</p>
+                    `
+                    alunosList.appendChild(alunoCard)
+                })
+            } catch (error) {
+                console.error('Erro ao buscar a lista de alunos:', error)
+                document.getElementById('alunos-list').innerHTML = '<p>Erro ao carregar a lista de alunos.</p>'
+            }
+        }
+
+        // Chama a função para buscar e exibir os alunos ao carregar a página
+        window.onload = fetchAlunos
+    </script>
+</body>
+</html>

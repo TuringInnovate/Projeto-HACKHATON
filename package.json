@@ -1,0 +1,20 @@
+{
+  "name": "appvirtualcall",
+  "version": "1.0.0",
+  "description": "Open the `App.js` file to start writing some code. You can preview the changes directly on your phone or tablet by scanning the **QR code** or use the iOS or Android emulators. When you're done, click **Save** and share the link!",
+  "main": "src/index.js", 
+  "scripts": {
+    "start": "node backend/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.1",
+    "fs": "^0.0.1-security",
+    "mongodb": "^6.10.0",
+    "mongoose": "^8.7.2",
+    "path": "^0.12.7"
+  }
+}

@@ -1,0 +1,97 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #e0f7fa; /* Azul claro suave */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Alinha o conteúdo verticalmente */
+    margin: 0;
+}
+
+.container {
+    width: 400px; /* Largura do container */
+    padding: 20px;
+    background: #ffffff; /* Fundo branco para o container */
+    border-radius: 10px; /* Bordas arredondadas */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Sombra para efeito flutuante */
+    display: flex;
+    flex-direction: column; /* Alinha os elementos em coluna */
+    align-items: center; /* Centraliza os itens horizontalmente */
+}
+
+h1 {
+    text-align: center;
+    color: #00796b; /* Cor do título em verde escuro */
+    margin-bottom: 20px; /* Espaço inferior */
+}
+
+form {
+    display: flex;
+    justify-content: space-between;
+    width: 100%; /* Largura total do container */
+    margin-bottom: 15px; /* Espaçamento inferior */
+}
+
+input {
+    flex: 1;
+    margin-right: 10px; /* Espaçamento entre input e botão */
+    padding: 12px; /* Aumenta o preenchimento do input */
+    border: 1px solid #b2dfdb; /* Borda suave em verde claro */
+    border-radius: 5px; /* Bordas arredondadas */
+    transition: border 0.3s; /* Transição suave para a borda */
+}
+
+input:focus {
+    border: 1px solid #00796b; /* Cor da borda ao focar */
+    outline: none; /* Remove a borda padrão do foco */
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    width: 100%; /* Largura total do container */
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #e0e0e0; /* Borda inferior suave */
+    transition: background-color 0.2s; /* Transição suave para o hover */
+}
+
+li:hover {
+    background-color: #f1f8e9; /* Cor de fundo suave ao passar o mouse */
+}
+
+.checkbox {
+    margin-right: 10px; /* Espaço entre checkbox e nome */
+}
+
+button {
+    background-color: #00796b; /* Cor do botão padrão em verde escuro */
+    color: white;
+    border: none;
+    padding: 10px 15px; /* Aumenta o preenchimento do botão */
+    border-radius: 5px; /* Bordas arredondadas */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s; /* Transições suaves */
+}
+
+button.edit {
+    background-color: #ffb74d; /* Cor do botão de editar em laranja */
+}
+
+button:hover {
+    background-color: #004d40; /* Cor mais escura ao passar o mouse */
+}
+
+button:active {
+    transform: scale(0.95); /* Leve efeito de clique */
+}
+
+.button-container {
+    display: flex; /* Alinha os botões horizontalmente */
+    gap: 5px; /* Espaço entre os botões */
+}
